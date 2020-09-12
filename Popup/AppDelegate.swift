@@ -37,9 +37,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
         
 
-		let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ViewControllerId") as! ViewController
+		//let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ViewControllerId") as! ViewController
 		
-		popover.contentViewController = mainViewController
+		//popover.contentViewController = mainViewController
 		
 		eventMonitor = EventMonitor(mask: [NSEvent.EventTypeMask.leftMouseDown, NSEvent.EventTypeMask.rightMouseDown]) { [weak self] event in
 			if let popover = self?.popover {
@@ -50,15 +50,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		}
 		eventMonitor?.start()
         
-        DFRSystemModalShowsCloseBoxWhenFrontMost(true)
-        let customTouchBarItem = NSCustomTouchBarItem(identifier: NSTouchBarItem.Identifier(rawValue: btcCharacter))
-        let customTouchBarItemButton = NSButton(title: btcCharacter, target: self, action: #selector(AppDelegate.customTouchBarItemTapped))
-        customTouchBarItem.view = customTouchBarItemButton
-        NSTouchBarItem.addSystemTrayItem(customTouchBarItem)
-        DFRElementSetControlStripPresenceForIdentifier(customTouchBarItem.identifier.rawValue, true)
-        
-        window.touchBar = coinPriceTouchBarController.touchBar
-        window.makeKeyAndOrderFront(nil)
+//        //DFRSystemModalShowsCloseBoxWhenFrontMost(true)
+//        let customTouchBarItem = NSCustomTouchBarItem(identifier: NSTouchBarItem.Identifier(rawValue: btcCharacter))
+//        let customTouchBarItemButton = NSButton(title: btcCharacter, target: self, action: #selector(AppDelegate.customTouchBarItemTapped))
+//        customTouchBarItem.view = customTouchBarItemButton
+//        NSTouchBarItem.addSystemTrayItem(customTouchBarItem)
+//        DFRElementSetControlStripPresenceForIdentifier(customTouchBarItem.identifier.rawValue, true)
+//
+//        window.touchBar = coinPriceTouchBarController.touchBar
+//        window.makeKeyAndOrderFront(nil)
         
 	}
 
@@ -86,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
     
     @objc private func customTouchBarItemTapped() {
-        NSTouchBar.presentSystemModalFunctionBar(coinPriceTouchBarController.touchBar, systemTrayItemIdentifier: btcCharacter)
+       // NSTouchBar.presentSystemModalFunctionBar(coinPriceTouchBarController.touchBar, systemTrayItemIdentifier: btcCharacter)
     }
     
 }
