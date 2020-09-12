@@ -1,2 +1,5 @@
 # BTC-Popup
- Shows a popup on MacOS status bar (by the clock) with the Bitcoin value
+
+Nothing crazy, just a simple MacOS utility that shows the current Bitcoing value in GBP on the status bar (by the clock).
+
+Download, open with Xcode, launch.
